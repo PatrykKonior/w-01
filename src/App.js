@@ -4,6 +4,7 @@ import Menu from "./components/Menu";
 import Chart1 from "./components/Chart1";
 import Chart2 from "./components/Chart2";
 import Chart3 from "./components/Chart3";
+import "./index.css";
 
 function App() {
   return (
