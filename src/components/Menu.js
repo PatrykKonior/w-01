@@ -1,6 +1,6 @@
 export default function Menu() {
   return (
-    <div className="bg-emerald-950 w-72 h-auto flex flex-col">
+    <div className="row-span-6 bg-emerald-950">
       <div className="text-white">
         <img src="" alt="patryk konior" />
         <div>

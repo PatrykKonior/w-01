@@ -12,7 +12,7 @@ const options = {
 
 export default function Chart3() {
   return (
-    <div>
+    <div className="col-span-2 row-span-2 col-start-3 row-start-3">
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );

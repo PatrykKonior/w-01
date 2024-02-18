@@ -10,9 +10,9 @@ const options = {
   ],
 };
 
-export default function Chart2() {
+export default function Chart6() {
   return (
-    <div className="col-start-2 row-start-4">
+    <div className="row-span-2 col-start-4 row-start-5">
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );
