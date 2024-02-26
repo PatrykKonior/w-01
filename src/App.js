@@ -16,7 +16,7 @@ function App() {
       <Menu />
       <Header />
       <Dates />
-      <Chart1 />
+      <Chart1 className="p-5 m-1 -inset-y-80 right-2 h-20" />
       <Chart2 />
       <Chart3 />
       <Chart4 />
