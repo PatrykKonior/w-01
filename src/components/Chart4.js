@@ -1,63 +1,111 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import HighchartsMore from "highcharts/highcharts-more";
+import SolidGauge from "highcharts/modules/solid-gauge";
+
+// Initialize the additional Highcharts modules
+HighchartsMore(Highcharts);
+SolidGauge(Highcharts);
 
 const options = {
   chart: {
-    type: "areaspline",
+    type: "gauge",
+    plotBackgroundColor: null,
+    plotBackgroundImage: null,
+    plotBorderWidth: 0,
+    plotShadow: false,
   },
-  plotOptions: {
-    areaspline: {
-      color: {
-        linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
-        stops: [
-          [0, "rgb(116,140,127)"], // Start color
-          [1, "rgba(233,245,234,1)"], // End color
-        ],
-      },
-    },
-  },
+
   title: {
-    text: "Ew/Ez [%]",
-    align: "left",
+    text: "Speedometer",
   },
-  xAxis: {
-    categories: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
-  },
-  yAxis: {
-    title: {
-      text: "", // Hide the text "Values" on the yAxis
-    },
-    labels: {
-      enabled: false, // Hide the labels on the yAxis
-    },
-    plotLines: [
+
+  pane: {
+    startAngle: -150,
+    endAngle: 150,
+    background: [
       {
-        color: "red",
-        width: 2,
-        value: 100,
-        zIndex: 5, // Ensure the plot line is above the series
-        label: {
-          text: "100 %",
-          align: "right",
-          style: {
-            color: "red",
-            fontWeight: "bold",
-          },
+        backgroundColor: {
+          linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+          stops: [
+            [0, "#FFF"],
+            [1, "#333"],
+          ],
         },
+        borderWidth: 0,
+        outerRadius: "109%",
+      },
+      {
+        backgroundColor: {
+          linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+          stops: [
+            [0, "#333"],
+            [1, "#FFF"],
+          ],
+        },
+        borderWidth: 1,
+        outerRadius: "107%",
+      },
+      {
+        // default background
+      },
+      {
+        backgroundColor: "#DDD",
+        borderWidth: 0,
+        outerRadius: "105%",
+        innerRadius: "103%",
       },
     ],
   },
+
+  // the value axis
+  yAxis: {
+    min: 0,
+    max: 200,
+
+    minorTickInterval: "auto",
+    minorTickWidth: 1,
+    minorTickLength: 10,
+    minorTickPosition: "inside",
+    minorTickColor: "#666",
+
+    tickPixelInterval: 30,
+    tickWidth: 2,
+    tickPosition: "inside",
+    tickLength: 10,
+    tickColor: "#666",
+    labels: {
+      step: 2,
+      rotation: "auto",
+    },
+    title: {
+      text: "km/h",
+    },
+    plotBands: [
+      {
+        from: 0,
+        to: 120,
+        color: "#55BF3B", // green
+      },
+      {
+        from: 120,
+        to: 160,
+        color: "#DDDF0D", // yellow
+      },
+      {
+        from: 160,
+        to: 200,
+        color: "#DF5353", // red
+      },
+    ],
+  },
+
   series: [
     {
-      name: "Ew/Ez [%]",
-      data: [80, 90, 96, 98, 99, 98, 97, 97, 96.7, 102, 98, 85],
-      color: "rgb(71,92,80)",
-      fillColor: {
-        linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
-        stops: [
-          [0, "rgb(116,140,127)"], // Start color
-          [1, "rgba(233,245,234,1)"], // End color
-        ],
+      name: "Speed",
+      data: [80],
+      tooltip: {
+        valueSuffix: " km/h",
       },
     },
   ],
@@ -65,7 +113,7 @@ const options = {
 
 export default function Chart4() {
   return (
-    <div className="row-span-2 col-start-5 row-start-3">
+    <div className="row-span-2 col-start-5 row-start-3 bg-slate-500 rounded-2xl overflow-auto relative p-5 m-1 -inset-y-48  h-auto w-96 right-4 ">
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );

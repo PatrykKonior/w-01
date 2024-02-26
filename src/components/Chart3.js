@@ -3,7 +3,7 @@ import HighchartsReact from "highcharts-react-official";
 
 const options = {
   chart: {
-    type: "areaspline",
+    type: "column",
   },
   plotOptions: {
     areaspline: {
@@ -65,7 +65,7 @@ const options = {
 
 export default function Chart3() {
   return (
-    <div className="col-span-2 row-span-2 col-start-3 row-start-3">
+    <div className="col-span-2 row-span-2 col-start-3 row-start-3 bg-slate-500 rounded-2xl overflow-auto relative p-5 m-1 -inset-y-48 h-auto w-auto">
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );

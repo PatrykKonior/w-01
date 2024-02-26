@@ -1,6 +1,6 @@
 export default function Dates() {
   return (
-    <div className="col-span-4 col-start-2 row-start-2 bg-slate-500 rounded-2xl overflow-auto relative flex p-5 m-1 -inset-y-80 right-2 h-14">
+    <div className="col-span-4 col-start-2 row-start-2 bg-slate-500 rounded-2xl overflow-auto relative flex p-5 m-1 -inset-y-28 right-2 h-16">
       <p className="text-1xl text-white font-bold absolute align-bottom top-4 ">
         Gospodarka wodociągowa
       </p>

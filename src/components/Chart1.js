@@ -65,7 +65,7 @@ const options = {
 
 export default function Chart1() {
   return (
-    <div className="col-start-2 row-start-3 text-2xl bg-slate-500 rounded-2xl overflow-auto relative flex p-5 m-1 -inset-y-full right-2 h-auto w-96">
+    <div className="col-start-2 row-start-3 text-2xl bg-slate-500 rounded-2xl overflow-auto relative p-5 m-1 -inset-y-full right-2 h-fit w-96">
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );
