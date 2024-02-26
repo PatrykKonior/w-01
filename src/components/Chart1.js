@@ -52,6 +52,13 @@ const options = {
       name: "Ew/Ez [%]",
       data: [80, 90, 96, 98, 99, 98, 97, 97, 96.7, 102, 98, 85],
       color: "rgb(71,92,80)",
+      fillColor: {
+        linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+        stops: [
+          [0, "rgb(116,140,127)"], // Start color
+          [1, "rgba(233,245,234,1)"], // End color
+        ],
+      },
     },
   ],
 };
