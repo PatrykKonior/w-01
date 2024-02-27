@@ -14,98 +14,87 @@ const options = {
     plotBackgroundImage: null,
     plotBorderWidth: 0,
     plotShadow: false,
+    height: "80%",
   },
 
   title: {
-    text: "Speedometer",
+    text: "Współczynnik energochłonności",
   },
 
   pane: {
-    startAngle: -150,
-    endAngle: 150,
-    background: [
-      {
-        backgroundColor: {
-          linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-          stops: [
-            [0, "#FFF"],
-            [1, "#333"],
-          ],
-        },
-        borderWidth: 0,
-        outerRadius: "109%",
-      },
-      {
-        backgroundColor: {
-          linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-          stops: [
-            [0, "#333"],
-            [1, "#FFF"],
-          ],
-        },
-        borderWidth: 1,
-        outerRadius: "107%",
-      },
-      {
-        // default background
-      },
-      {
-        backgroundColor: "#DDD",
-        borderWidth: 0,
-        outerRadius: "105%",
-        innerRadius: "103%",
-      },
-    ],
+    startAngle: -90,
+    endAngle: 89.9,
+    background: null,
+    center: ["50%", "75%"],
+    size: "120%",
   },
 
   // the value axis
   yAxis: {
     min: 0,
-    max: 200,
-
-    minorTickInterval: "auto",
-    minorTickWidth: 1,
-    minorTickLength: 10,
-    minorTickPosition: "inside",
-    minorTickColor: "#666",
-
+    max: 1,
     tickPixelInterval: 30,
-    tickWidth: 2,
     tickPosition: "inside",
-    tickLength: 10,
-    tickColor: "#666",
+    tickColor: "#FFFFFF",
+    tickWidth: 2,
+    tickLength: 20,
+    minorTickInterval: null,
+
     labels: {
+      distance: 20,
       step: 2,
-      rotation: "auto",
+      style: {
+        fontsize: "14px",
+      },
     },
-    title: {
-      text: "km/h",
-    },
+    lineWidth: 0,
     plotBands: [
       {
         from: 0,
-        to: 120,
-        color: "#55BF3B", // green
+        to: 0.5,
+        color: "#00563F",
+        thickness: 15,
       },
       {
-        from: 120,
-        to: 160,
-        color: "#DDDF0D", // yellow
+        from: 0.5,
+        to: 0.55,
+        color: "#EDA323",
+        thickness: 15,
       },
       {
-        from: 160,
-        to: 200,
-        color: "#DF5353", // red
+        from: 0.55,
+        to: 1,
+        color: "#DF5353",
+        thickness: 15,
       },
     ],
   },
 
   series: [
     {
-      name: "Speed",
-      data: [80],
+      name: "kWh/m3",
+      data: [0.372],
       tooltip: {
-        valueSuffix: " km/h",
+        valueSuffix: "kWh/m3",
+      },
+      dataLabels: {
+        format: "{y} kWh/m3",
+        borderWidth: 0,
+        color: "#333333",
+      },
+      style: {
+        fontSize: "16px",
+      },
+      dial: {
+        radius: "80%",
+        backgroundColor: "gray",
+        baseWidth: 12,
+        baseLength: "0%",
+        rearLength: "0%",
+      },
+      pivot: {
+        backgroundColor: "gray",
+        radius: 6,
       },
     },
   ],
