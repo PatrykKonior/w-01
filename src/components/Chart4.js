@@ -52,7 +52,13 @@ const options = {
       {
         from: 0,
         to: 0.5,
-        color: "#00563F",
+        color: {
+          linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+          stops: [
+            [0, "#00563F"],
+            [1, "#FFFFFF"], // End color of the gradient
+          ],
+        },
         thickness: 15,
       },
       {
@@ -64,7 +70,13 @@ const options = {
       {
         from: 0.55,
         to: 1,
-        color: "#DF5353",
+        color: {
+          linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+          stops: [
+            [0, "#DF5353"], // Start color of the gradient
+            [1, "#FFFFFF"],
+          ],
+        },
         thickness: 15,
       },
     ],
